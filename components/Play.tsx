@@ -48,8 +48,6 @@ const Play: NextPage = () => {
         await connection.confirmTransaction(tx);
         setStatusInfo("Waiting for transaction confirmation");
 
-        const winner = 'winner' ;
-
         const coinFlipData = await program.account.coinFlip.fetch(responseJson.coinFlipPDA);
 
         const winner = coinFlipData.state.finished.winner.toString();
